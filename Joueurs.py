@@ -1,7 +1,12 @@
 class Joueur:
-	def __int__(self, Nom, Pion, OrdreJeu, DeplacementPlanche, Avoir):
-		self.Nom = Nom
-		self.Pion = Pion
-		self.OrdreJeu = OrdreJeu
-		self.DeplacementPlanche = DeplacementPlanche
-		self.Avoir = Avoir
+	def __init__(self, nom, nomnormale, pion, ordrejeu, ordrefin, deplacement, comptebancaire, tentativeprison, nombredetourenprison, nombreentreeenprison, findepartie):
+		self.nom = nom
+		self.nomnormale = nomnormale
+		self.pion = pion
+		self.ordrejeu = ordrejeu
+		self.ordrefin = ordrefin
+		self.deplacement = deplacement
+		self.comptebancaire = comptebancaire
+		self.tentativeprison = tentativeprison
+		self.nombreentreeenprison = nombreentreeenprison
+		self.findepartie = findepartie

@@ -1,4 +1,4 @@
 from Jeu import JeuMonopoly
 
-Partie = JeuMonopoly
-Partie.Lancerlesdés()
+Partie = JeuMonopoly()
+Partie.JouerPartie()

@@ -1,0 +1,41 @@
+numero;nom;typedecase;couleur;prix;prixmaison;prixhotel;loyerintermediaire;loyer0;loyer1;loyer2;loyer3;loyer4;loyerhotel;hypotheque;proprietaire;nombredevisite
+0;Go;go;;2;0;0;0;0;0;0;0;0;0;0;-1;0
+1;Cabot Trail;propriete;Mauve;0.6;0.5;0.5;0.02;0.02;0.1;0.3;0.9;1.6;2.5;0.3;-1;0
+2;Caisse commune;evenement;;0;0;0;0;0;0;0;0;0;0;0;-1;0
+3;Peggy's Cove;propriete;Mauve;0.6;0.5;0.5;0.04;0.04;0.3;0.6;1.8;3.2;4.5;0.3;-1;0
+4;Taxe d'electricite;taxe;;2;0;0;0;0;0;0;0;0;0;0;-1;0
+5;Aeroport international de St.-John's;aeroport;;2;0;0;0.25;0.25;0.5;1;2;0;0;1;-1;0
+6;Pont de la Confederation;propriete;Bleu pale;1;0.5;0.5;0.06;0.06;0.3;0.9;2.7;4;5.5;0.5;-1;0
+7;Chance;chance;;0;0;0;0;0;0;0;0;0;0;0;-1;0
+8;Grand prix du Canada;propriete;Bleu pale;1;0.5;0.5;0.06;0.06;0.3;0.9;2.7;4;5.5;0.5;-1;0
+9;West Edmonton Mall;propriete;Bleu pale;1.2;0.5;0.5;0.08;0.08;0.4;1;3;4.5;6;0.6;-1;0
+10;Visite en prison;visite;;0;0;0;0;0;0;0;0;0;0;0;-1;0
+11;Rocher perce;propriete;Rose;1.4;1;0.7;0.1;0.1;0.5;1.5;4.5;6.25;7.5;0.7;-1;0
+12;Service d'electricite;service;;1.5;0;0;0.04;0.04;0.1;0;0;0;0;0.75;-1;0
+13;Cote Magnetique;propriete;Rose;1.4;1;1;0.1;0.1;0.5;1.5;4.5;6.25;7.5;0.7;-1;0
+14;Centre Rogers;propriete;Rose;1.6;1;1;0.12;0.12;0.6;1.8;5;7;9;0.8;-1;0
+15;Aeroport international de Vancouver;aeroport;;2;0;0;0.25;0.25;0.5;1;2;0;0;1;-1;0
+16;Churchill Manitoba;propriete;Orange;1.8;1;1;0.14;0.14;0.7;2;5.5;7.5;9.5;0.9;-1;0
+17;Caisse commune;caisse;;0;0;0;0;0;0;0;0;0;0;0;-1;0
+18;Parc Assiniboine;propriete;Orange;1.8;1;1;0.14;0.14;0.7;2;5.5;7.5;9.5;0.9;-1;0
+19;Tunnels de Moose Jaw;propriete;Orange;2;1;1;0.16;0.16;0.8;2.2;6;8;10;1;-1;0
+20;Stationnement;stationnement;;0;0;0;0;0;0;0;0;0;0;0;-1;0
+21;Stampede de Calgary;propriete;Rouge;2.2;1.5;1.5;0.18;0.18;0.9;2.5;7;8.75;10.5;1.1;-1;0
+22;Chance;chance;;0;0;0;0;0;0;0;0;0;0;0;-1;0
+23;Parc national de Banff;propriete;Rouge;2.2;1.5;1.5;0.18;0.18;0.9;2.5;7;8.75;10.5;1.1;-1;0
+24;Parc Stanley;propriete;Rouge;2.4;1.5;1.5;0.2;0.2;1;3;7.5;9.25;11;1.2;-1;0
+25;Aeroport international Trudeau de Montreal;aeroport;;2;0;0;0.25;0.25;0.5;1;2;0;0;1;-1;0
+26;Canal rideau;propriete;Jaune;2.6;1.5;1.5;0.22;0.22;1.1;3.3;8;9.74;11.5;1.3;-1;0
+27;Yorkville;propriete;Jaune;2.6;1.5;1.5;0.22;0.22;1.1;3.3;8;9.75;11.5;1.3;-1;0
+28;Service d'eau;service;;1.5;0;0;0.04;0.04;0.1;0;0;0;0;0.75;-1;0
+29;Colline Parlementaire;propriete;Jaune;2.8;1.5;1.5;0.24;0.24;1.2;3.6;8.5;10.25;12;1.4;-1;0
+30;Prison;prison;;0;0;0;0;0;0;0;0;0;0;0;-1;0
+31;Rue Robison;propriete;Vert;3;2;2;0.26;0.26;1.3;3.9;9;11;12.75;1.5;-1;0
+32;Rue Ste-Catherine;propriete;Vert;3;2;2;0.26;0.26;1.3;3.9;9;11;12.75;1.5;-1;0
+33;Caisse commune;caisse;;0;0;0;0;0;0;0;0;0;0;0;-1;0
+34;Rue Yonge;propriete;Vert;3.2;2;2;0.28;0.28;1.5;4.5;10;12;14;1.6;-1;0
+35;Aeroport international Pearon de Toronto;aeroport;;2;0;0;0.25;0.25;0.5;1;2;0;0;1;-1;0
+36;Chance;chance;;0;0;0;0;0;0;0;0;0;0;0;-1;0
+37;Chutes Niagara;propriete;Bleu fonce;3.5;2;2;0.35;0.35;1.75;5;11;13;15;1.75;-1;0
+38;Taxe d'eau;taxe;;1;0;0;0;0;0;0;0;0;0;0;-1;0
+39;Tour du CN;propriete;Bleu fonce;4;2;2;0.5;0.5;2;6;14;17;20;2;-1;0
