@@ -406,3 +406,4 @@ class JeuMonopoly:
 		print(Fore.CYAN + Style.BRIGHT + "Vous pouvez consulter le fichier", self.nomdufichier, Fore.CYAN + Style.BRIGHT + "pour consulter les résultats de cette partie de Monopoly." + Style.RESET_ALL)
 
 Jeudemonopolygéénéral = JeuMonopoly()
+Jeudemonopolygéénéral.JouerPartie()
