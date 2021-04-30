@@ -5,9 +5,6 @@ from Cases import Initialisercase
 from Joueurs import Joueur
 import csv
 
-#Modifier les loyers selon le fait qu'un joueur à toutes les propriétés ET/OU selon le nombre de maison sur la propriété.
-#Ajouter une composante CSV afin d'exporter les résultats obtenus après la partie de Monopoly
-
 class JeuMonopoly:
 
 	def __init__(self):
@@ -22,7 +19,7 @@ class JeuMonopoly:
 
 	def InitialiserJoueurs(self):
 		self.listejoueur.append(Joueur(Fore.RED + Style.BRIGHT + "Anthony" + Style.RESET_ALL, 'Anthony', 'chapeau', 1, 0, 0, 15, 0, 0, 0, 'non'))
-		self.listejoueur.append(Joueur(Fore.GREEN + Style.BRIGHT + "Yanik" + Style.RESET_ALL, 'Yanik', 'auto', 2, 0, 0, 15, 0, 0, 0, 'non'))
+		#self.listejoueur.append(Joueur(Fore.GREEN + Style.BRIGHT + "Yanik" + Style.RESET_ALL, 'Yanik', 'auto', 2, 0, 0, 15, 0, 0, 0, 'non'))
 		#self.listejoueur.append(Joueur(Fore.MAGENTA + Style.BRIGHT + "Fabienne" + Style.RESET_ALL, 'Fabienne', 'deacoudre', 3, 0, 0, 15, 0, 0, 0, 'non'))
 		#self.listejoueur.append(Joueur(Fore.BLUE + Style.BRIGHT + "Simon" + Style.RESET_ALL, 'Simon', 'chien', 4, 0, 0, 15, 0, 0, 0, 'non'))
 	
@@ -56,18 +53,14 @@ class JeuMonopoly:
 		
 		if self.listejoueur[self.joueurx].deplacement >= 40 :
 			self.listejoueur[self.joueurx].deplacement -= 40
-			self.listejoueur[self.joueurx].comptebancaire = round(self.listejoueur[self.joueurx].comptebancaire + 1, 2)  #À cause de l'impossibilité d'acheter des maisons et que les loyers sont beaucoup trop bas, il est nécessaire de diminuer le montant du Go afin de que le jeu puisse se terminer.
-			print("Félicitations, vous avez passé la case Go! Vous recevez 2 M$. Le solde de ton compte bancaire est :", self.listejoueur[self.joueurx].comptebancaire,"M$.")
 		
-		self.planche[self.listejoueur[self.joueurx].deplacement].nombredevisite += 1
+		self.planche[self.listejoueur[self.joueurx].deplacement].nombredevisite += 1 
 	
 	def EvenementJoueurEntreePrison(self):
-		print("Tu vas donc en prison !")
 		self.listejoueur[self.joueurx].deplacement = 10
 		self.double = "false"
 
 	def EvenementJoueurCase(self):
-		print(self.listejoueur[self.joueurx].nom,"est tombé sur la case",self.listejoueur[self.joueurx].deplacement, "qui correspond au",self.planche[self.listejoueur[self.joueurx].deplacement].nom,".")
 		if self.planche[self.listejoueur[self.joueurx].deplacement].typedecase == "prison":
 			self.EvenementJoueurEntreePrison()
 
@@ -87,7 +80,7 @@ class JeuMonopoly:
 
 	def JouerTourComplet(self):
 		self.nombretour = 0
-		while self.nombretour == 10:
+		while self.nombretour != 10000:
 			self.nombretour += 1
 			print(Fore.YELLOW + Style.BRIGHT + '********** Début du tour **********' + Style.RESET_ALL)
 			print("Nous sommes rendus au tour", self.nombretour,".")
@@ -99,11 +92,10 @@ class JeuMonopoly:
 				
 				if self.joueurx == len(self.listejoueur):
 				 	self.joueurx == 0				
-					print()
-					
+
 	def Exporterlesrésultats(self):
 		erreurexporter = 'oui'
-		self.nomdufichier = Fore.YELLOW + Style.BRIGHT + 'Cumul-Resultat-Parties.csv' + Style.RESET_ALL
+		self.nomdufichier = Fore.YELLOW + Style.BRIGHT + 'Déplacements-joueurs.csv' + Style.RESET_ALL
 		while erreurexporter == 'oui':
 			try :
 				with open('Déplacements-joueurs.csv', mode = 'a', newline='') as fichier_file:
@@ -113,14 +105,15 @@ class JeuMonopoly:
 
 			except PermissionError :
 				print("Vous devez fermer le fichier CSV dont le nom est", self.nomdufichier ,"pour continuer le programme.")
-				question = input("Est-ce fait ? oui")
+				question = input("Est-ce fait ?")
 				question 
 
 	def JouerPartie(self):
-		self.InitialiserLaPartie()
-		self.JouerTourComplet()
-		self.Exporterlesrésultats()
-		print(Fore.CYAN + Style.BRIGHT + "Vous pouvez consulter le fichier", self.nomdufichier, Fore.CYAN + Style.BRIGHT + "pour consulter les résultats de cette partie de Monopoly." + Style.RESET_ALL)
+		for i in range(18):
+			self.InitialiserLaPartie()
+			self.JouerTourComplet()
+			self.Exporterlesrésultats()
+			print(Fore.CYAN + Style.BRIGHT + "Vous pouvez consulter le fichier", self.nomdufichier, Fore.CYAN + Style.BRIGHT + "pour consulter les résultats de cette partie de Monopoly." + Style.RESET_ALL)
 
 Jeu = JeuMonopoly()
-jeu.JouerPartie()
+Jeu.JouerPartie()

@@ -5,8 +5,12 @@ from Cases import Initialisercase
 from Joueurs import Joueur
 import csv
 
-#Modifier les loyers selon le fait qu'un joueur à toutes les propriétés ET/OU selon le nombre de maison sur la propriété.
-#Ajouter une composante CSV afin d'exporter les résultats obtenus après la partie de Monopoly
+#Voici ce que le programme manque afin qu'il soit exactement identique au jeu Monopoly : 
+# -Permettre aux joueurs d'acheter des maisons selon le fait qu'ils possèdent toutes les propriétés de la même coueleur et modifier le loyer en conséquence; 
+# -Intégrer les cartes chances et les cartes trésors;
+# -Intégrer la possibilité d'hypothéquer les propriété au lieu de mettre fin à la partie de ce joueur;
+# -Intégrer la vente de propriété à un autre joueur si un joueur a encore besoin d'argent avant qu'il ne puisse plus jouer;
+# -Intégrer la possibilité de faire des enchères.
 
 class JeuMonopoly:
 
@@ -58,7 +62,7 @@ class JeuMonopoly:
 		
 		if self.listejoueur[self.joueurx].deplacement >= 40 :
 			self.listejoueur[self.joueurx].deplacement -= 40
-			self.listejoueur[self.joueurx].comptebancaire = round(self.listejoueur[self.joueurx].comptebancaire + 1, 2)  #À cause de l'impossibilité d'acheter des maisons et que les loyers sont beaucoup trop bas, il est nécessaire de diminuer le montant du Go afin de que le jeu puisse se terminer.
+			self.listejoueur[self.joueurx].comptebancaire = round(self.listejoueur[self.joueurx].comptebancaire + 1, 2)
 			print("Félicitations, vous avez passé la case Go! Vous recevez 2 M$. Le solde de ton compte bancaire est :", self.listejoueur[self.joueurx].comptebancaire,"M$.")
 		
 		self.planche[self.listejoueur[self.joueurx].deplacement].nombredevisite += 1
@@ -240,6 +244,7 @@ class JeuMonopoly:
 		self.listejoueur[self.joueurx].deplacement = 30
 		self.double = "false"
 		self.listejoueur[self.joueurx].nombreentreeenprison += 1
+		self.listejoueur[self.joueurx].tentativeprison = 0
 
 	def EvenementJoueurSortiePrison(self):
 		if self.nbdouble == 1 :
@@ -252,7 +257,7 @@ class JeuMonopoly:
 			self.listejoueur[self.joueurx].tentativeprison += 1
 			
 			if self.listejoueur[self.joueurx].tentativeprison == 4:
-				print("Ça fait un moment que tu es en prison, tu dois payer 0.5 M$ !")
+				print("Ça fait un moment que tu es en prison, tu dois payer 0.5 M$ et continue à jouer!")
 				self.listejoueur[self.joueurx].comptebancaire = round(self.listejoueur[self.joueurx].comptebancaire - 0.5, 2)
 				self.listejoueur[self.joueurx].deplacement = 10
 				self.Deplacementjoueur()
@@ -286,7 +291,7 @@ class JeuMonopoly:
 		self.listejoueur[self.joueurx].ordrefin = self.ordrejoueurfin
 		self.ordrejoueurfin += 1
 
-		for self.casex in range(len(self.planche)) : #Rend les propriétés disponibles pour les autres joueurs, toutefois, il serait plus pertinent d'ajouter la possibilité aux autres joueurs de vendre leur propriété à la place
+		for self.casex in range(len(self.planche)) : 
 			if self.planche[self.casex].proprietaire == self.joueurx :
 				self.planche[self.casex].proprietaire = -1
 				self.planche[self.casex].loyerintermediaire = self.planche[self.casex].loyer0
@@ -395,7 +400,7 @@ class JeuMonopoly:
 
 			except PermissionError :
 				print("Vous devez fermer le fichier CSV dont le nom est", self.nomdufichier ,"pour continuer le programme.")
-				question = input("Est-ce fait ? oui")
+				question = input("Est-ce fait ?")
 				question 
 
 	def JouerPartie(self):
@@ -403,7 +408,7 @@ class JeuMonopoly:
 		self.JouerTourComplet()
 		self.ResumePartie()
 		self.Exporterlesrésultats()
-		print(Fore.CYAN + Style.BRIGHT + "Vous pouvez consulter le fichier", self.nomdufichier, Fore.CYAN + Style.BRIGHT + "pour consulter les résultats de cette partie de Monopoly." + Style.RESET_ALL)
+		print(Fore.CYAN + Style.BRIGHT + "Vous pouvez consulter le fichier", self.nomdufichier, Fore.CYAN + Style.BRIGHT + "pour constater les résultats de cette partie de Monopoly." + Style.RESET_ALL)
 
 Jeudemonopolygéénéral = JeuMonopoly()
 Jeudemonopolygéénéral.JouerPartie()
